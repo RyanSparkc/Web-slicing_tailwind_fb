@@ -15,6 +15,8 @@ const panels = [plusPanel, msgPanel, notificationPanel, moresPanel];
 
 function openPanel(index) {
   panels.forEach((p, idx) => {
+    p.classList.add("hidden");
+
     if (index === idx) {
       p.classList.remove("hidden");
       return;
@@ -23,13 +25,12 @@ function openPanel(index) {
     if (p.classList.contains("hidden")) {
       return;
     }
-
-    p.classList.add("hidden");
   });
 }
 
 window.addEventListener("click", function () {
   openPanel(-1);
+  console.log('window');
 });
 
 plusBtn.addEventListener("click", function (event) {
@@ -55,10 +56,12 @@ moresBtn.addEventListener("click", function (event) {
 // 取消告訴 window 被點擊的情況
 plusPanel.addEventListener("click", function (event) {
   event.stopPropagation();
+  console.log('plus');
 });
 
 msgPanel.addEventListener("click", function (event) {
   event.stopPropagation();
+  console.log('msgPanel');
 });
 
 notificationPanel.addEventListener("click", function (event) {
