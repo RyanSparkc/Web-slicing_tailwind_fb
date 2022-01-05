@@ -1,3 +1,10 @@
+import Swiper, {
+  Navigation,
+} from 'swiper';
+// swiper bundle styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import "./index.css";
 
 // ----------------- Panel 相關 ---------------
@@ -190,7 +197,7 @@ const storyList = document.getElementById('story-list')
 function renderStoryItem() {
  
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
 
     const divBox = document.createElement('div');
     divBox.classList.add('flex-1', 'px-[4px]', 'min-w-[120px]', 'cursor-pointer');
@@ -228,3 +235,44 @@ function renderStoryItem() {
 }
 
 renderStoryItem()
+
+
+// --------------------包廂輪播相關------------------
+
+function renderLiveItem(){
+
+  const swiperWrapperLive = document.getElementById('swiper-wrapper-live');
+
+  for (let i = 0; i <20; i++) {
+    const divBox = document.createElement('div');
+    divBox.classList.add('swiper-slide');
+
+
+    const item = `
+    <div class="w-[55px]">
+      <div class="relative w-[40px] cursor-pointer">
+        <div class="overflow-hidden rounded-full">
+          <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+        </div>
+        <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0 ring ring-gray-900"></div>
+      </div>
+    </div>
+`
+    divBox.innerHTML = item;
+
+    swiperWrapperLive.appendChild(divBox)
+    
+  }
+
+  new Swiper(".fb-live", {
+    loop:false,
+    slidesPerView: "auto",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    modules: [Navigation],
+  });
+}
+
+renderLiveItem()

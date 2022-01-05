@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TailwindCSS</title>
+  <title>TailwindCSS Fake FB</title>
 </head>
 
 <body class="bg-fb-bg">
-  <header class="w-full h-[56px] bg-fb-header fixed top-0 left-0 right-0 flex items-center justify-between px-4 z-20">
+  <header class="w-full h-[56px] bg-fb-header fixed top-0 left-0 right-0 flex items-center justify-between px-4 z-40">
     <!-- header left -->
     <div class="flex items-center">
       <!-- FB LOGO -->
@@ -147,11 +147,12 @@
     </div>
 
     <!-- 動態牆 -->
-    <div class="max-w-[744px] w-full mx-auto px-4">
+    <div class="max-w-[744px] w-full mx-auto px-4 nosc">
       <!-- <p class="w-full bg-white h-[50px]">動態牆</p> -->
-      <!-- // 限時動態 -->
+
+      <!-- 限時動態 -->
       <div class="relative">
-        <div class="flex overflow-x-auto" id="story-list">
+        <div class="flex overflow-x-auto no-scrollbar" id="story-list">
           <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
             <div class="h-full flex flex-col">
               <div class="h-full overflow-hidden">
@@ -202,8 +203,162 @@
           <img src="https://bruce-fe-fb.web.app/image/right-arrow.svg" alt="" srcset="">
         </button>
       </div>
-    </div>
 
+      <!-- 在想些什麼 -->
+      <div class="card">
+        <div class="flex pb-4">
+          <div class="w-[40px] rounded-full overflow-hidden mr-3">
+            <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+          </div>
+          <div class="bg-fb-input flex-1 rounded-full flex items-center pl-3">
+            <!-- <p class="text-left text-sm pl-3 text-gray-400">萊恩，在想些什麼？</p> -->
+            <input type="text" class="w-full bg-transparent focus:outline-none text-white" placeholder="萊恩，在想些什麼？" />
+          </div>
+        </div>
+        <div class="border-t border-gray-700 flex pt-3">
+          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/camera.svg" alt="" srcset="">
+              </div>
+              <p class="text-gray-400 text-sm pl-1.5">直播視訊</p>
+          </button>         
+          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/photo.svg" alt="" srcset="">
+              </div>
+              <p class="text-gray-400 text-sm pl-1.5">相片 / 影片</p>
+          </button>         
+          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/feel.svg" alt="" srcset="">
+              </div>
+              <p class="text-gray-400 text-sm pl-1.5">感受 / 活動</p>
+          </button>         
+        </div>
+      </div>
+
+      <!-- 開包廂 -->
+      <div class="card pr-0 flex">
+        <!-- <button class="mr-4 px-4 h-[40px] ring-2 ring-gary-600 flex items-center rounded-full focus:outline-none">
+          <div class="w-[24px]">
+            <img src="https://bruce-fe-fb.web.app/image/video.svg" alt="">
+          </div>
+          <p class="ml-2 text-fb text-sm font-bild">
+            建立包廂
+          </p>
+        </button>
+        <div class="w-[55px]">
+          <div class="relative w-[40px] cursor-pointer">
+            <div class="overflow-hidden rounded-full">
+              <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+            </div>
+            <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0 ring ring-gray-900"></div>
+          </div>
+        </div> -->
+      
+        <!-- Swiper -->
+        <!-- main-container -->
+        <div class="swiper swiper-container mySwiper fb-live">
+          <div class="swiper-wrapper" id="swiper-wrapper-live">
+            <div class="swiper-slide">
+              <button class="mr-4 px-4 h-[40px] ring-2 ring-gary-600 flex items-center rounded-full focus:outline-none">
+                <div class="w-[24px]">
+                  <img src="https://bruce-fe-fb.web.app/image/video.svg" alt="">
+                </div>
+                <p class="ml-2 text-fb text-sm font-bild">建立包廂</p>
+              </button>
+            </div>
+            <!-- slider -->
+            <!-- <div class="swiper-slide">
+              <div class="w-[55px]">
+                <div class="relative w-[40px] cursor-pointer">
+                  <div class="overflow-hidden rounded-full">
+                    <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+                  </div>
+                  <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0 ring ring-gray-900"></div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+      </div>
+
+      <!-- 貼文牆 -->
+      <div class="card pb-0 px-0">
+        <!-- 貼文標題 -->
+        <div class="flex px-4">
+          <div class="w-[44px] rounded-full overflow-hidden mr-3">
+            <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+          </div>
+          <div class="flex-1">
+            <p class="text-white">萊恩</p>
+            <div class="flex items-center text-gray-400 text-sm">
+              <div class="">5 小時</div>
+              <div>。</div>
+              <div class="w-[12px]">
+                <img class="w-full" src="https://bruce-fe-fb.web.app/image/earth.svg" alt="">
+              </div>
+            </div>
+          </div>
+          <button class="w-[12px] focus:outline-none">
+            <img src="https://bruce-fe-fb.web.app/image/more.svg" alt="">
+          </button>
+        </div>
+        <!-- 貼文內文 -->
+        <p class="text-base text-gray-300 mt-3 px-4">
+          【萊恩】 蛋糕台北分店開幕囉！！
+        </p>
+        <!-- 貼文圖片 -->
+        <a href="#" class="block mt-3">
+          <div class="w-full overflow-hidden h-[260px] bg-[#5556ab]">
+            <!-- <img class="w-full object-cover" src="https://bruce-fe-fb.web.app/image/item.png" alt=""> -->
+          </div>
+          <div class="bg-fb-input w-full px-4 py-2 text-white">
+            <p class="text-gray-400 text-sm">WWW.GOOGLE.COM</p>
+            <p class="text-lg">【萊恩】 蛋糕台北分店開幕囉！！</p>
+          </div>
+        </a>
+        <!-- 讚、留言 -->
+        <div class="px-4">
+          <div class="border-b border-gray-700 flex justify-between py-3">
+            <div class="flex items-center">
+              <div class="w-[18px] mr-2"><img src="https://bruce-fe-fb.web.app/image/like-blue.svg" alt=""></div>
+              <p class="text-gray-400 text-sm">990</p>
+            </div>
+            <div class="flex items-center">
+              <p class="text-sm text-gray-400 mr-2">4 則留言</p>
+              <p class="text-sm text-gray-400">1 則分享</p>
+            </div>
+          </div>
+          <div class="flex items-center py-2">
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/like.svg" alt="">
+              </div>
+              <p class="text-gray-400 text-sm pl-1.5">讚</p>
+            </button>
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/chat.svg" alt="">
+              </div>
+              <p class="text-gray-400 text-sm pl-1.5">留言</p>
+            </button>
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+              <div class="w-[16px]">
+                <img src="https://bruce-fe-fb.web.app/image/share.svg" alt="">
+              </div>
+              <p class="text-gray-400 text-sm pl-1.5">分享</p>
+            </button>
+          </div>
+        </div>
+      </div>
+        
+
+    </div>
     <!-- 右側聯絡人 -->
     <div id="right-block" class="hidden sticky top-main-span max-w-[360px] w-full h-full lg:block">
       <!-- <p class="mb-2 text-lg text-gray-400">聯絡人</p> -->
@@ -222,6 +377,8 @@
       </div> -->
     </div>
   </main>
+
+
 </body>
 
 </html>
