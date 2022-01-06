@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 const path = require('path');
 
+const DEV_MODE = process.env.NODE_ENV === 'development';
+console.log(`DEV_MODE:${DEV_MODE}`);
 module.exports = {
   target: 'web',
   // 入口
@@ -55,8 +57,9 @@ module.exports = {
       filename: 'index.[hash].css'
     }),
     new CleanWebpackPlugin(),
-    new CompressionPlugin()
+    // new CompressionPlugin()
   ],
 
-  devtool: 'source-map'
+  // devtool: 'source-map'
+  devtool: DEV_MODE ? 'inline-source-map' : false,
 }

@@ -110,3 +110,15 @@
     background: #a0aec0;
   } */
 /* } */
+
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin{
+  100% {
+    transform: rotate(1turn);
+  }
+}

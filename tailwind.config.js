@@ -14,7 +14,30 @@ module.exports = {
         'fb-popover': '#3e4042',
         'fb-active': '#323436',
         'fb-card': '#242526',
-        'fb': '#2e89ff'
+        'fb': '#2e89ff',
+
+        c_purple: {
+          100: "#ddddee",
+          200: "#bbbbdd",
+          300: "#999acd",
+          400: "#7778bc",
+          500: "#5556ab",
+          600: "#444589",
+          700: "#333467",
+          800: "#222244",
+          900: "#111122"
+        },
+
+      },
+      animation: {
+        c_spin: 'c_Spin 1s linear infinite',
+      },
+      keyframes: {
+        c_Spin: {
+          '100%': {
+            transform: 'rotate(1turn)'
+          },
+        }
       }
     },
   },
@@ -23,3 +46,4 @@ module.exports = {
   },
   plugins: [],
 }
+
