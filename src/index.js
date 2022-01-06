@@ -1,6 +1,4 @@
-import Swiper, {
-  Navigation,
-} from 'swiper';
+import Swiper, { Navigation, } from 'swiper';
 // swiper bundle styles
 import 'swiper/css';
 import 'swiper/css/navigation';
