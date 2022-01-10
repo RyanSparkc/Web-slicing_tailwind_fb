@@ -1,7 +1,9 @@
-import Swiper, { Navigation, } from 'swiper';
+import Swiper, { Navigation, Manipulation } from 'swiper';
 // swiper bundle styles
-import 'swiper/css';
+import 'swiper/css/bundle'
+// import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/manipulation';
 
 import "./index.css";
 
@@ -273,4 +275,37 @@ function renderLiveItem(){
   });
 }
 
-renderLiveItem()
+// renderLiveItem()
+
+function renderLiveItemOnSwApi() {
+  const item = `
+  <div class="swiper-slide">
+      <div class="w-[55px]">
+        <div class="relative w-[40px] cursor-pointer">
+          <div class="overflow-hidden rounded-full">
+            <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+          </div>
+          <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-0 right-0 ring ring-gray-900">
+          </div>
+        </div>
+      </div>
+    </div>
+  `
+  const swiper = new Swiper(".fb-live", {
+    loop: false,
+    slidesPerView: "auto",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    modules: [Navigation, Manipulation],
+    direction: "horizontal",
+  });
+
+  for (let i = 0; i < 20; i++) {
+    swiper.appendSlide(item);
+  }
+}
+
+renderLiveItemOnSwApi();
+
