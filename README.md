@@ -1,5 +1,5 @@
 # Tailwind CSS x Facebook UI
-fb created by Tailwind CSS
+FB UI created by Tailwind CSS
 
 ## Features 
 * Header 上具有開關閉功能，動態顯示視窗。
