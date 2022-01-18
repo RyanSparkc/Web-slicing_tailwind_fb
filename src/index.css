@@ -4,11 +4,11 @@
 
 @layer components {
   .popover-btn {
-    @apply w-[39px] h-[39px] p-2.5 ml-2 rounded-full bg-fb-popover flex justify-center items-center cursor-pointer active:bg-fb-active;
+    @apply w-[39px] h-[39px] p-2 ml-2 text-black dark:text-white rounded-full bg-fb-popover hover:bg-fb-popover-hover dark:bg-fb-popover-dark dark:hover:bg-fb-popover-hover-dark flex justify-center items-center cursor-pointer active:bg-fb-active dark:active:bg-fb-active-dark;
   }
 
   .popover-panel {
-    @apply w-[300px] p-4 bg-fb-header rounded-lg shadow-lg absolute right-0 top-12 border border-fb-input lg:w-[360px];
+    @apply w-[300px] p-4 bg-fb-header dark:bg-fb-header-dark rounded-lg shadow-lg absolute right-0 top-12 border border-fb-input dark:border-fb-input-dark lg:w-[360px];
   }
 
   .story {
@@ -20,7 +20,7 @@
   }
 
   .card {
-    @apply rounded-lg mt-4 px-4 py-3 bg-fb-card;
+    @apply rounded-lg mt-4 px-4 py-3 bg-fb-card dark:bg-fb-card-dark;
   }
 }
 
@@ -45,7 +45,13 @@
   width: 36px !important;
   height: 36px !important;
   top: 29px !important;
+  /* filter: invert(100%); */
 }
+
+/* .dark .swiper-button-next,
+.dark .swiper-button-prev {
+  filter: invert(0%);
+} */
 
 .swiper-button-next::after {
   display: none;
@@ -61,6 +67,7 @@
   width: 36px !important;
   height: 36px !important;
   top: 29px !important;
+  /* filter: invert(100%); */
 }
 
 .swiper-button-prev::after {

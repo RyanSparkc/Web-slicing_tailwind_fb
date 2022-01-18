@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-hant-tw">
+<html lang="zh-hant-tw" >
 
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,8 @@
   <title>TailwindCSS Fake FB</title>
 </head>
 
-<body class="bg-fb-bg">
-  <header class="w-full h-[56px] bg-fb-header fixed top-0 left-0 right-0 flex items-center justify-between px-4 z-40">
+<body class="bg-fb-bg dark:bg-fb-bg-dark duration-300 transition-colors">
+  <header class="w-full h-[56px] bg-fb-header dark:bg-fb-header-dark fixed top-0 left-0 right-0 flex items-center justify-between px-4 z-40">
     <!-- header left -->
     <div class="flex items-center">
       <!-- FB LOGO -->
@@ -30,80 +30,84 @@
       <button class="popover-btn lg:hidden">
         <img src="https://bruce-fe-fb.web.app/image/search.svg" alt="搜尋" srcset="" />
       </button>
-      <div class=" bg-fb-input ml-2 py-2 px-3 w-[240px] rounded-full items-center hidden lg:flex ">
+      <div class=" bg-fb-input dark:bg-fb-input-dark ml-2 py-2 px-3 w-[240px] rounded-full items-center hidden lg:flex ">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-2" fill="none" viewBox="0 0 24 24"
              stroke="#9ba3af">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
-        <input type="text" class="w-full text-white bg-transparent focus:outline-none" placeholder="搜尋 Facebook" />
+        <input type="text" class="w-full text-black dark:text-white bg-transparent focus:outline-none" placeholder="搜尋 Facebook" />
       </div>
     </div>
     <!-- header right -->
     <div class="relative flex items-center">
       <button class="popover-btn" id="plus-btn">
-        <img src="https://bruce-fe-fb.web.app/image/plus.svg" alt="" srcset="" />
+        <!-- <img src="https://bruce-fe-fb.web.app/image/plus.svg" alt="" srcset="" /> -->
+        <span class="iconify text-4xl dark:text-white" data-icon="akar-icons:plus"></span>
       </button>
       <button class="popover-btn" id="msg-btn">
-        <img src="https://bruce-fe-fb.web.app/image/messenger.svg" alt="" srcset="" />
+        <!-- <img src="https://bruce-fe-fb.web.app/image/messenger.svg" alt="" srcset="" /> -->
+        <span class="iconify text-4xl dark:text-white" data-icon="ri:messenger-fill"></span>
       </button>
       <button class="popover-btn" id="notification-btn">
-        <img src="https://bruce-fe-fb.web.app/image/bell.svg" alt="" srcset="" />
+        <!-- <img src="https://bruce-fe-fb.web.app/image/bell.svg" alt="" srcset="" /> -->
+        <span class="iconify text-4xl dark:text-white" data-icon="bx:bxs-bell"></span>
       </button>
       <button class="popover-btn" id="more-btn">
-        <img src="https://bruce-fe-fb.web.app/image/down.svg" alt="" srcset="" />
+        <!-- <img src="https://bruce-fe-fb.web.app/image/down.svg" alt="" srcset="" /> -->
+        <span class="iconify text-md dark:text-white" data-icon="bx:bxs-down-arrow"></span>
       </button>
 
       <!-- 下拉選單 1 plus -->
       <div class="hidden popover-panel" id="plus-panel">
-        <p class="mb-3 text-2xl text-white">建立</p>
-        <div class="flex items-center p-1 mb-2 rounded-lg cursor-pointer hover:bg-fb-input">
-          <div class="flex items-center justify-center p-2 mr-2 rounded-full bg-fb-input">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="22" height="22" viewBox="0 0 24 24"
-                 stroke="white">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        <p class="mb-3 text-2xl text-fb-text dark:text-white">建立</p>
+        <div class="flex items-center p-1 mb-2 rounded-lg cursor-pointer hover:bg-fb-input dark:hover:bg-fb-input-dark">
+          <div class="flex items-center justify-center p-2 mr-2 rounded-full bg-fb-input dark:bg-fb-input-dark">
+            <svg class="stroke-current stroke-2 text-black dark:text-white " xmlns="http://www.w3.org/2000/svg" fill="none" width="22" height="22" viewBox="0 0 24 24"
+                >
+              <path stroke-linecap="round" stroke-linejoin="round"
                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
           </div>
           <div class="flex-1">
-            <p class="tetx-sm text-white mb-[2px]">貼文</p>
-            <p class="text-xs text-gray-400">在動態消息分享貼文。</p>
+            <p class="tetx-sm text-fb-text dark:text-white mb-[2px]">貼文</p>
+            <p class="text-xs text-fb-text dark:text-gray-400">在動態消息分享貼文。</p>
           </div>
         </div>
       </div>
 
       <!-- 下拉選單 2 messenger -->
       <div class="hidden popover-panel" id="msg-panel">
-        <p class="mb-3 text-2xl text-white">Messenger</p>
-        <div class="flex items-center px-3 py-1 mb-4 rounded-full bg-fb-input">
+        <p class="mb-3 text-2xl text-fb-text dark:text-white">Messenger</p>
+        <div class="flex items-center px-3 py-1 mb-4 rounded-full bg-fb-input dark:bg-fb-input-dark">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] mr-2" fill="none" viewBox="0 0 24 24"
                stroke="#9ba3af">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <input type="text" class="w-full text-white bg-transparent focus:outline-none" placeholder="搜尋 Messenger" />
+          <input type="text" class="w-full text-black dark:text-fb-input bg-transparent dark:bg-fb-input-dark focus:outline-none" placeholder="搜尋 Messenger" />
         </div>
 
-        <div class="flex items-center p-2 mb-2 rounded-lg cursor-pointer hover:bg-fb-input">
+        <div class="flex items-center p-2 mb-2 rounded-lg cursor-pointer hover:bg-fb-input dark:hover:bg-fb-input-dark">
           <div class="w-[50px] h-[50px] rounded-full overflow-hidden mr-3">
-            <img class="object-cover w-full" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" srcset="" />
+            <img class="object-cover w-full" src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="" srcset="" />
           </div>
           <div class="flex-1">
-            <p class="text-base text-white mb-[2px]">萊恩</p>
-            <p class="text-sm text-gray-400">TailwindCSS 讚讚！ · 1分鐘前</p>
+            <p class="text-base text-fb-text dark:text-white mb-[2px]">萊恩</p>
+            <p class="text-sm dark:text-gray-400">TailwindCSS 讚讚！ · 1分鐘前</p>
           </div>
         </div>
       </div>
 
       <!-- 下拉選單 3 bell -->
       <div class="hidden popover-panel" id="notification-panel">
-        <p class="mb-3 text-2xl text-white">通知</p>
-        <div class="flex items-center p-2 mb-2 rounded-lg cursor-pointer hover:bg-fb-input">
+        <p class="mb-3 text-2xl text-fb-text dark:text-white">通知</p>
+        <div class="flex items-center p-2 mb-2 rounded-lg cursor-pointer hover:bg-fb-input dark:hover:bg-fb-input-dark">
           <div class="w-[50px] h-[50px] rounded-full overflow-hidden mr-3">
-            <img class="object-cover w-full" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" srcset="" />
+            <img class="object-cover w-full" src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="" srcset="" />
           </div>
           <div class="flex-1">
-            <p class="text-base text-white mb-[2px]">萊恩發布了一則貼文！</p>
+            <p class="text-base text-fb-text dark:text-white mb-[2px]">萊恩發布了一則貼文！</p>
             <p class="text-sm text-fb">1分鐘前</p>
           </div>
         </div>
@@ -111,31 +115,33 @@
 
       <!-- 下拉選單 4 down -->
       <div class="hidden popover-panel" id="more-panel">
-        <div class="flex items-center p-2 mb-2 rounded-lg cursor-pointer hover:bg-fb-input">
+        <div class="flex items-center p-2 mb-2 rounded-lg cursor-pointer hover:bg-fb-input dark:hover:bg-fb-input-dark">
           <div class="w-[50px] h-[50px] rounded-full overflow-hidden mr-3">
-            <img class="object-cover w-full" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" srcset="" />
+            <img class="object-cover w-full" src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="" srcset="" />
           </div>
           <div class="flex-1">
-            <p class="text-base text-white mb-[2px]">萊恩</p>
-            <p class="text-sm text-gray-400">查看你的個人檔案</p>
+            <p class="text-base text-fb-text dark:text-white mb-[2px]">萊恩</p>
+            <p class="text-sm dark:text-gray-400">查看你的個人檔案</p>
           </div>
+        </div>       
+        <div class="flex items-center p-1 mb-2 rounded-lg cursor-pointer hover:bg-fb-input dark:hover:bg-fb-input-dark" id="color-theme-switcher">
+          <button class=" bg-fb-input dark:bg-fb-input-dark rounded-full p-2 mr-2 flex justify-center items-center ">
+            <span id="logo-sun" class="iconify pointer-events-none text-black dark:text-white hidden duration-200"
+                  data-icon="icon-park-outline:sun" data-height="22"></span>
+            <span id="logo-moon" class="iconify pointer-events-none text-black dark:text-white" data-icon="eva:moon-fill"
+                  data-height="24"></span>
+          </button>
+          <p class="flex-1 text-black dark:text-white" id="color-theme-info">顯示：夜晚</p>
         </div>
-        <div class="flex items-center p-1 mb-2 rounded-lg cursor-pointer hover:bg-fb-input">
-          <div class="flex items-center justify-center p-2 mr-2 rounded-full bg-fb-input">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="22" height="22" viewBox="0 0 24 24"
-                 stroke="white">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        <div class="flex items-center p-1 mb-2 rounded-lg cursor-pointer hover:bg-fb-input dark:hover:bg-fb-input-dark">
+          <div class="flex items-center justify-center p-2 mr-2 rounded-full bg-fb-input dark:bg-fb-input-dark">
+            <svg class="stroke-current stroke-2 text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                width="22" height="22" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
                     d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
           </div>
-          <p class="flex-1 text-white">登出</p>
-          <label class="relative block w-10 h-5 m-5 cursor-pointer">
-            <input type="checkbox"
-                   class="peer checked:bg-c_purple-500 appearance-none w-full h-full bg-gray-200 box-content rounded-full outline-none duration-300" />
-            <div
-                 class="peer-checked:translate-x-full bg-white w-1/2 h-5 absolute top-0 rounded-full scale-75 shadow-md duration-300">
-            </div>
-          </label>
+          <p class="flex-1 text-black dark:text-white">登出</p>
         </div>
       </div>
     </div>
@@ -147,9 +153,9 @@
         ">
       <!-- <div class="flex items-center w-full p-2 mb-1 rounded cursor-pointer justify-items-center hover:bg-fb-input">
           <div class="w-[32px] overflow-hidden rounded-full mr-4">
-            <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+            <img src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="">
           </div>
-          <p class="text-white text-[.9rem]">萊恩</p>
+          <p class="text-black text-[.9rem]">萊恩</p>
         </div> -->
     </div>
 
@@ -163,14 +169,14 @@
           <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
             <div class="flex flex-col h-full">
               <div class="h-full overflow-hidden">
-                <img class="object-cover w-full h-full duration-500 hover:scale-105" src="https://bruce-fe-fb.web.app/image/avator.png" alt="" srcset="">
+                <img class="object-cover w-full h-full duration-500 hover:scale-105" src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="" srcset="">
               </div>
-              <div class="relative px-2 pt-6 pb-2 bg-fb-card">
+              <div class="relative px-2 pt-6 pb-2 bg-fb-card dark:bg-fb-card-dark">
                 <button class="w-[32px] h-[32px] p-2 absolute -top-4
-                left-[calc(50%-16px)] bg-fb rounded-full focus:outline-none ring ring-fb-card flex justify-center items-center">
+                left-[calc(50%-16px)] bg-fb rounded-full focus:outline-none ring ring-fb-card dark:ring-fb-card-dark flex justify-center items-center">
                   <img src="https://bruce-fe-fb.web.app/image/plus.svg" alt="" srcset="">
                 </button>
-                <p class="w-full text-center text-white">建立限時動態</p>
+                <p class="w-full text-center text-black dark:text-white">建立限時動態</p>
               </div>
             </div>
           </div>
@@ -178,36 +184,36 @@
             <div class="relative">
               <div class="absolute top-0 left-0 w-full h-full bg-black/70"></div>
               <div class="w-[32px] h-[32px] absolute top-4 left-4 ring-4 ring-fb bg-fb-card rounded-full flex justify-center items-center z-10">
-                <p class="text-sm text-white">萊</p>
+                <p class="text-sm text-black">萊</p>
               </div>
               <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 to-transparent "></div>
               <img class="w-full h-full duration-500 hover:scale-105" src="https://picsum.photos/325/577.jpg?random=1" alt="" srcset="">
-              <p class="absolute z-10 text-white bottom-2 left-2">萊恩</p>
+              <p class="absolute z-10 text-black bottom-2 left-2">萊恩</p>
             </div>
           </div> -->
           <!-- <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
             <div class="relative">
               <div class="w-[32px] h-[32px] absolute top-4 left-4 ring-4 ring-fb bg-fb-card rounded-full flex justify-center items-center z-10">
-                <p class="text-sm text-white">萊</p>
+                <p class="text-sm text-black">萊</p>
               </div>
               <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 to-transparent "></div>
               <img class="w-full h-full duration-500 hover:scale-105" src="https://picsum.photos/325/577.jpg?random=2" alt="" srcset="">
-              <p class="absolute z-10 text-white bottom-2 left-2">萊恩</p>
+              <p class="absolute z-10 text-black bottom-2 left-2">萊恩</p>
             </div>
           </div> -->
           <!-- <div class="flex-1 px-[4px] min-w-[120px] cursor-pointer">
             <div class="relative">
               <div class="w-[32px] h-[32px] absolute top-4 left-4 ring-4 ring-fb bg-fb-card rounded-full flex justify-center items-center z-10">
-                <p class="text-sm text-white">萊</p>
+                <p class="text-sm text-black">萊</p>
               </div>
               <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/30 to-transparent"></div>
               <img class="w-full h-full duration-500 hover:scale-105" src="https://bruce-fe-fb.web.app/image/story.png" alt="" srcset="">
-              <p class="absolute z-10 text-white bottom-2 left-2">萊恩</p>
+              <p class="absolute z-10 text-black bottom-2 left-2">萊恩</p>
             </div>
           </div> -->
         </div>
-        <button class="absolute popover-btn -right-3 top-[calc(50%-22.5px)] z-30 w-[45px] h-[45px]">
-          <img src="https://bruce-fe-fb.web.app/image/right-arrow.svg" alt="" srcset="">
+        <button class="absolute popover-btn  -right-3 top-[calc(50%-22.5px)] z-30 w-[45px] h-[45px]">
+          <img class="filter invert dark:invert-0" src="https://bruce-fe-fb.web.app/image/right-arrow.svg" alt="" srcset="">
         </button>
       </div>
 
@@ -215,31 +221,31 @@
       <div class="card">
         <div class="flex pb-4">
           <div class="w-[40px] rounded-full overflow-hidden mr-3">
-            <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+            <img src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="">
           </div>
-          <div class="flex items-center flex-1 pl-3 rounded-full bg-fb-input">
-            <!-- <p class="pl-3 text-sm text-left text-gray-400">萊恩，在想些什麼？</p> -->
-            <input type="text" class="w-full text-white bg-transparent focus:outline-none" placeholder="萊恩，在想些什麼？" />
+          <div class="flex items-center flex-1 pl-3 rounded-full bg-fb-input dark:bg-fb-input-dark">
+            <!-- <p class="pl-3 text-sm text-left dark:text-gray-400">萊恩，在想些什麼？</p> -->
+            <input type="text" class="w-full text-black bg-transparent focus:outline-none" placeholder="萊恩，在想些什麼？" />
           </div>
         </div>
-        <div class="flex pt-3 border-t border-gray-700">
-          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+        <div class="flex pt-3 border-t border-gray-200 dark:border-gray-700">
+          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input dark:hover:bg-fb-input-dark flex items-center justify-center">
               <div class="w-[16px]">
                 <img src="https://bruce-fe-fb.web.app/image/camera.svg" alt="" srcset="">
               </div>
-              <p class="text-gray-400 text-sm pl-1.5">直播視訊</p>
+              <p class="dark:text-gray-400 text-sm pl-1.5">直播視訊</p>
           </button>         
-          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input dark:hover:bg-fb-input-dark flex items-center justify-center">
               <div class="w-[16px]">
                 <img src="https://bruce-fe-fb.web.app/image/photo.svg" alt="" srcset="">
               </div>
-              <p class="text-gray-400 text-sm pl-1.5">相片 / 影片</p>
+              <p class="dark:text-gray-400 text-sm pl-1.5">相片 / 影片</p>
           </button>         
-          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+          <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input dark:hover:bg-fb-input-dark flex items-center justify-center">
               <div class="w-[16px]">
                 <img src="https://bruce-fe-fb.web.app/image/feel.svg" alt="" srcset="">
               </div>
-              <p class="text-gray-400 text-sm pl-1.5">感受 / 活動</p>
+              <p class="dark:text-gray-400 text-sm pl-1.5">感受 / 活動</p>
           </button>         
         </div>
       </div>
@@ -257,7 +263,7 @@
         <div class="w-[55px]">
           <div class="relative w-[40px] cursor-pointer">
             <div class="overflow-hidden rounded-full">
-              <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+              <img src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="">
             </div>
             <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0 ring ring-gray-900"></div>
           </div>
@@ -268,7 +274,7 @@
         <div class="swiper swiper-container mySwiper fb-live">
           <div class="swiper-wrapper" id="swiper-wrapper-live">
             <div class="swiper-slide">
-              <button class="mr-4 px-4 h-[40px] ring-2 ring-gary-600 flex items-center rounded-full focus:outline-none">
+              <button class="mr-4 px-4 h-[40px] ring-2 ring-gary-600 flex items-center rounded-full focus:outline-none hover:bg-fb-input dark:hover:bg-fb-input-dark">
                 <div class="w-[24px]">
                   <img src="https://bruce-fe-fb.web.app/image/video.svg" alt="">
                 </div>
@@ -280,7 +286,7 @@
               <div class="w-[55px]">
                 <div class="relative w-[40px] cursor-pointer">
                   <div class="overflow-hidden rounded-full">
-                    <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+                    <img src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="">
                   </div>
                   <div class="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0 ring ring-gray-900"></div>
                 </div>
@@ -288,8 +294,8 @@
             </div> -->
           </div>
           <!-- navigation buttons -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next text-fb-text bg-white"></div>
+          <div class="swiper-button-prev text-fb-text bg-white"></div>
           <!-- <div class="swiper-pagination"></div> -->
         </div>
       </div>
@@ -299,11 +305,11 @@
         <!-- 貼文標題 -->
         <div class="flex px-4">
           <div class="w-[44px] rounded-full overflow-hidden mr-3">
-            <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="">
+            <img src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="">
           </div>
           <div class="flex-1">
-            <p class="text-white">萊恩</p>
-            <div class="flex items-center text-sm text-gray-400">
+            <p class="text-black dark:text-white">萊恩</p>
+            <div class="flex items-center text-sm dark:text-gray-400">
               <div class="">5 小時</div>
               <div>。</div>
               <div class="w-[12px]">
@@ -316,7 +322,7 @@
           </button>
         </div>
         <!-- 貼文內文 -->
-        <p class="px-4 mt-3 text-base text-gray-300">
+        <p class="px-4 mt-3 text-base dark:text-gray-300">
           【萊恩】 蛋糕台北分店開幕囉！！
         </p>
         <!-- 貼文圖片 -->
@@ -324,41 +330,41 @@
           <div class="w-full overflow-hidden h-[260px] bg-c_purple-900">
             <!-- <img class="object-cover w-full" src="https://bruce-fe-fb.web.app/image/item.png" alt=""> -->
           </div>
-          <div class="w-full px-4 py-2 text-white bg-fb-input">
-            <p class="text-sm text-gray-400">WWW.GOOGLE.COM</p>
-            <p class="text-lg">【萊恩】 蛋糕台北分店開幕囉！！</p>
+          <div class="w-full px-4 py-2 text-black bg-fb-input dark:bg-fb-input-dark">
+            <p class="text-sm dark:text-gray-400">WWW.GOOGLE.COM</p>
+            <p class="text-lg dark:text-white">【萊恩】 蛋糕台北分店開幕囉！！</p>
           </div>
         </a>
         <!-- 讚、留言 -->
         <div class="px-4">
-          <div class="flex justify-between py-3 border-b border-gray-700">
+          <div class="flex justify-between py-3 border-b border-gray-200 dark:border-gray-700">
             <div class="flex items-center">
               <div class="w-[18px] mr-2"><img src="https://bruce-fe-fb.web.app/image/like-blue.svg" alt=""></div>
-              <p class="text-sm text-gray-400">990</p>
+              <p class="text-sm dark:text-gray-400">990</p>
             </div>
             <div class="flex items-center">
-              <p class="mr-2 text-sm text-gray-400">4 則留言</p>
-              <p class="text-sm text-gray-400">1 則分享</p>
+              <p class="mr-2 text-sm dark:text-gray-400">4 則留言</p>
+              <p class="text-sm dark:text-gray-400">1 則分享</p>
             </div>
           </div>
           <div class="flex items-center py-2">
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input dark:hover:bg-fb-input-dark flex items-center justify-center">
               <div class="w-[16px]">
                 <img src="https://bruce-fe-fb.web.app/image/like.svg" alt="">
               </div>
-              <p class="text-gray-400 text-sm pl-1.5">讚</p>
+              <p class="dark:text-gray-400 text-sm pl-1.5">讚</p>
             </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input dark:hover:bg-fb-input-dark flex items-center justify-center">
               <div class="w-[16px]">
                 <img src="https://bruce-fe-fb.web.app/image/chat.svg" alt="">
               </div>
-              <p class="text-gray-400 text-sm pl-1.5">留言</p>
+              <p class="dark:text-gray-400 text-sm pl-1.5">留言</p>
             </button>
-            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input flex items-center justify-center">
+            <button class="flex-1 h-[40px] rounded-lg hover:bg-fb-input dark:hover:bg-fb-input-dark flex items-center justify-center">
               <div class="w-[16px]">
                 <img src="https://bruce-fe-fb.web.app/image/share.svg" alt="">
               </div>
-              <p class="text-gray-400 text-sm pl-1.5">分享</p>
+              <p class="dark:text-gray-400 text-sm pl-1.5">分享</p>
             </button>
           </div>
         </div>
@@ -369,15 +375,15 @@
         <!-- 貼文標題 -->
         <div class="flex items-center px-4 mb-4">
           <!-- 頭像 -->
-          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3 bg-fb-input"></div>
+          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3 bg-fb-input dark:bg-fb-input-dark"></div>
           <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
             <!-- 大標題 -->
-            <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
+            <div class="bg-fb-input dark:bg-fb-input-dark h-[16px] w-[200px] rounded-full"></div>
             <!-- 小標題 -->
-            <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
+            <div class="bg-fb-input dark:bg-fb-input-dark h-[12px] w-[100px] rounded-full"></div>
           </div>
           <div class="ml-auto text-gray-200 select-none">
-            <svg class="animate-c_spin h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg class="animate-c_spin h-8 w-8 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor"
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
@@ -385,7 +391,7 @@
             </svg>
           </div>
         </div>
-        <div class="w-full bg-fb-input h-[260px]"></div>
+        <div class="w-full bg-fb-input dark:bg-fb-input-dark h-[260px]"></div>
       </div>
 
       <!-- 貼文牆(Loading) -->
@@ -393,15 +399,15 @@
         <!-- 貼文標題 -->
         <div class="flex items-center px-4 mb-4">
           <!-- 頭像 -->
-          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3 bg-fb-input"></div>
+          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3 bg-fb-input dark:bg-fb-input-dark"></div>
           <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
             <!-- 大標題 -->
-            <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
+            <div class="bg-fb-input dark:bg-fb-input-dark h-[16px] w-[200px] rounded-full"></div>
             <!-- 小標題 -->
-            <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
+            <div class="bg-fb-input dark:bg-fb-input-dark h-[12px] w-[100px] rounded-full"></div>
           </div>
         </div>
-        <div class="w-full bg-fb-input h-[260px]"></div>
+        <div class="w-full bg-fb-input dark:bg-fb-input-dark h-[260px]"></div>
       </div>
 
       <!-- 貼文牆(Loading) -->
@@ -409,43 +415,39 @@
         <!-- 貼文標題 -->
         <div class="flex items-center px-4 mb-4">
           <!-- 頭像 -->
-          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3 bg-fb-input"></div>
+          <div class="w-[44px] h-[44px] rounded-full overflow-hidden mr-3 bg-fb-input dark:bg-fb-input-dark"></div>
           <div class="flex content-evenly flex-wrap w-[200px] h-[50px]">
             <!-- 大標題 -->
-            <div class="bg-fb-input h-[16px] w-[200px] rounded-full"></div>
+            <div class="bg-fb-input dark:bg-fb-input-dark h-[16px] w-[200px] rounded-full"></div>
             <!-- 小標題 -->
-            <div class="bg-fb-input h-[12px] w-[100px] rounded-full"></div>
+            <div class="bg-fb-input dark:bg-fb-input-dark h-[12px] w-[100px] rounded-full"></div>
           </div>
         </div>
-        <div class="w-full bg-fb-input h-[260px]"></div>
+        <div class="w-full bg-fb-input dark:bg-fb-input-dark h-[260px]"></div>
       </div>
         
 
     </div>
     <!-- 右側聯絡人 js產出-->
     <div id="right-block" class="hidden sticky top-main-span max-w-[360px] w-full h-full lg:block">
-      <!-- <p class="mb-2 text-lg text-gray-400">聯絡人</p> -->
+      <!-- <p class="mb-2 text-lg dark:text-gray-400">聯絡人</p> -->
       <!-- <div id="right-block">
         <div class="flex items-center w-full px-1 py-2 rounded cursor-pointer hover:bg-fb-input">
           <div class="w-[45px]">
             <div class="relative w-[32px] cursor-pointer">
               <div class="overflow-hidden rounded-full">
-                <img src="https://bruce-fe-fb.web.app/image/avator.png" alt="" />
+                <img src="https://i.imgur.com/k5wE6L4_d.webp?maxwidth=760&fidelity=grand" alt="" />
               </div>
               <div class=" w-[8px] h-[8px] rounded-full bg-green-500 absolute bottom-0 right-0 ring-gray-900 ring "></div>
             </div>
           </div>
-          <p class="text-white text-[.9rem]">萊恩</p>
+          <p class="text-black text-[.9rem]">萊恩</p>
         </div>
       </div> -->
     </div>
   </main>
 
-  
-
- 
-
-
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 </body>
 
 </html>
