@@ -11,10 +11,13 @@ import "./index.css";
 
 
 // ----------------- Panel 相關 ---------------
+const headerRightPanel = document.getElementById('header-right-panel')
+
 const plusBtn = document.getElementById("plus-btn");
 const msgBtn = document.getElementById("msg-btn");
 const notificationBtn = document.getElementById("notification-btn");
 const moresBtn = document.getElementById("more-btn");
+const btns = [plusBtn, msgBtn, notificationBtn, moresBtn]
 
 const plusPanel = document.getElementById("plus-panel");
 const msgPanel = document.getElementById("msg-panel");
@@ -38,49 +41,89 @@ function openPanel(index) {
   });
 }
 
+function btnSwitchActive(index) {
+  btns.forEach((btn, idx) => {
+    if (index === idx) {
+      btn.classList.add('bg-fb-active','dark:bg-fb-active-dark', 'dark:hover:bg-fb-hovering-active-dark', 'hover:bg-fb-hover-active')
+    } else {
+      btn.classList.remove('bg-fb-active','dark:bg-fb-active-dark', 'dark:hover:bg-fb-hovering-active-dark', 'hover:bg-fb-hover-active')
+    }
+  })
+}
+
 window.addEventListener("click", function () {
   openPanel(-1);
+  btnSwitchActive(-1)
   console.log('window');
 });
 
-plusBtn.addEventListener("click", function (event) {
-  event.stopPropagation();
-  openPanel(0);
-});
+headerRightPanel.addEventListener('click', function togglePanel(e) {
+  e.stopPropagation()
+  if (e.target.classList.contains('bg-fb-active')) {
+    openPanel(-1)
+    btnSwitchActive(-1)
+    return
+  }
+  switch (e.target.id) {
+    case 'plus-btn':
+      openPanel(0)
+      btnSwitchActive(0)
+      break
+    case 'msg-btn':
+      openPanel(1)
+      btnSwitchActive(1)
+      break
+    case 'notification-btn':
+      openPanel(2)
+      btnSwitchActive(2)
+      break
+    case 'more-btn':
+      openPanel(3)
+      btnSwitchActive(3)
+      break
+  }
+})
 
-msgBtn.addEventListener("click", function (event) {
-  event.stopPropagation();
-  openPanel(1);
-});
 
-notificationBtn.addEventListener("click", function (event) {
-  event.stopPropagation();
-  openPanel(2);
-});
 
-moresBtn.addEventListener("click", function (event) {
-  event.stopPropagation();
-  openPanel(3);
-});
+// plusBtn.addEventListener("click", function (event) {
+//   event.stopPropagation();
+//   openPanel(0);
+// });
 
-// 取消告訴 window 被點擊的情況
-plusPanel.addEventListener("click", function (event) {
-  event.stopPropagation();
-  console.log('plus');
-});
+// msgBtn.addEventListener("click", function (event) {
+//   event.stopPropagation();
+//   openPanel(1);
+// });
 
-msgPanel.addEventListener("click", function (event) {
-  event.stopPropagation();
-  console.log('msgPanel');
-});
+// notificationBtn.addEventListener("click", function (event) {
+//   event.stopPropagation();
+//   openPanel(2);
+// });
 
-notificationPanel.addEventListener("click", function (event) {
-  event.stopPropagation();
-});
+// moresBtn.addEventListener("click", function (event) {
+//   event.stopPropagation();
+//   openPanel(3);
+// });
 
-moresPanel.addEventListener("click", function (event) {
-  event.stopPropagation();
-});
+// // 取消告訴 window 被點擊的情況
+// plusPanel.addEventListener("click", function (event) {
+//   event.stopPropagation();
+//   console.log('plus');
+// });
+
+// msgPanel.addEventListener("click", function (event) {
+//   event.stopPropagation();
+//   console.log('msgPanel');
+// });
+
+// notificationPanel.addEventListener("click", function (event) {
+//   event.stopPropagation();
+// });
+
+// moresPanel.addEventListener("click", function (event) {
+//   event.stopPropagation();
+// });
 
 
 // 右側欄 > more > 日間／夜間顯示模式
