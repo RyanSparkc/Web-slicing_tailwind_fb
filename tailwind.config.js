@@ -15,7 +15,7 @@ module.exports = {
         'fb-hover-input-dark': '#5a5b5c',
         'fb-popover-dark': '#3e4042',
         'fb-popover-hover-dark': '#5e5e5e',
-        'fb-active-dark': '#323436',
+        'fb-active-dark': 'rgb(56, 88, 152)',
         'fb-hover-active-dark': 'rgb(56, 88, 130, 0.7)',
         'fb-card-dark': '#242526',
         'fb-dark': '#2e89ff',

@@ -44,13 +44,13 @@ function openPanel(index) {
 function btnSwitchActive(index) {
   btns.forEach((btn, idx) => {
     if (index === idx) {
-      btn.classList.add('bg-fb-active','dark:bg-fb-active-dark', 'dark:hover:bg-fb-hovering-active-dark', 'hover:bg-fb-hover-active')
+      btn.classList.add('bg-fb-active','dark:bg-fb-active-dark', 'dark:hover:bg-fb-hover-active-dark', 'hover:bg-fb-hover-active')
     } else {
-      btn.classList.remove('bg-fb-active','dark:bg-fb-active-dark', 'dark:hover:bg-fb-hovering-active-dark', 'hover:bg-fb-hover-active')
+      btn.classList.remove('bg-fb-active','dark:bg-fb-active-dark', 'dark:hover:bg-fb-hover-active-dark', 'hover:bg-fb-hover-active')
     }
   })
 }
-
+// 取消告訴 window 被點擊的情況
 window.addEventListener("click", function () {
   openPanel(-1);
   btnSwitchActive(-1)
@@ -250,7 +250,6 @@ function renderRightBlock(pic) {
       `;
     htmlStr = htmlStr + rightItem;
   }
-
   rightBlock.innerHTML = htmlStr;
 }
 
@@ -375,11 +374,11 @@ const getAndRenderPics = function (url) {
       console.log(res)
       randomPics.push(...res.data.results)
       console.log('randomPics', randomPics);
-      // // 渲染動態牆
+      // 渲染動態牆
       renderStoryItem(randomPics)
-      // // 渲染右側聯絡人
+      // 渲染右側聯絡人
       renderRightBlock(randomPics)
-      // // 渲染包廂輪播
+      // 渲染包廂輪播
       renderLiveItemOnSwApi(randomPics);
     })
     .catch((err) => {
