@@ -2,6 +2,7 @@
 FB UI created by Tailwind CSS
 
 ## Features 
+* 編譯後沒有對應文件夾
 * Header 上具有開關閉功能，動態顯示視窗。
 * 左右邊資訊欄透過 JavaScripts 動態產生內容。
 * 實作限時動態及貼文區版面。
